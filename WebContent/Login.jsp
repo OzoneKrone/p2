@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="it.unisa.control.HtmlUtils"%>
 <!DOCTYPE html>
 
 <html>
@@ -30,12 +30,11 @@
 			<%}%>
 			
 			<div class="tableRow">
-			<p>Username:</p>	
-			<p><input type="text" name="un" required placeholder="inserisci username"/></p>		
-			</div>
+			<p>Username:</p>
+			<p><input type="text" name="un" required placeholder="inserisci username" value="<%= HtmlUtils.escapeHtml(request.getParameter("un")) %>"/></p>
 			<div class="tableRow">
 			<p>Password:</p>
-			<p><input type="password" name="pw" required placeholder="inserisci password"/></p>
+			<p><input type="password" name="pw" required placeholder="inserisci password" value="<%= HtmlUtils.escapeHtml(request.getParameter("pw")) %>"/></p>
 			</div>
 			<div class="tableRow">
 			<p></p>

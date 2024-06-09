@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="UTF-8" import="it.unisa.model.ProdottoBean, java.util.*"%>
+<%@ page import="it.unisa.control.HtmlUtils" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" import="it.unisa.model.ProdottoBean, java.util.*"%>
 
 <%
 	ArrayList<?> products = (ArrayList<?>) request.getSession().getAttribute("products");
@@ -43,8 +43,8 @@
 		%>
 		
 		<tr>
-			<td><%=bean.getNome()%></td>
-			<td><%=bean.getPiattaforma()%></td>
+			<td><%= HtmlUtils.escapeHtml(bean.getNome()) %></td>
+			<td><%= HtmlUtils.escapeHtml(bean.getPiattaforma()) %></td>
 			<td><%=bean.getQuantita()%></td>
 			<td><a href="ModificaProdotto.jsp?prodotto=<%=bean.getIdProdotto()%>"><button>Modifica</button></a></td>
 		</tr>
